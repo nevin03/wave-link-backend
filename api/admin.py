@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TermsAndConditions, PrivacyPolicy
+from .models import TermsAndConditions, PrivacyPolicy, ContactDetails
 
 @admin.register(TermsAndConditions)
 class TermsAdmin(admin.ModelAdmin):
@@ -19,6 +19,17 @@ class PrivacyAdmin(admin.ModelAdmin):
     
     def has_add_permission(self, request):
         return not PrivacyPolicy.objects.exists()
+    
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+@admin.register(ContactDetails)
+class ContactDetailsAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'name', 'email', 'phone', 'updated_at']
+    ordering = ['-updated_at']
+    
+    def has_add_permission(self, request):
+        return not ContactDetails.objects.exists()
     
     def has_delete_permission(self, request, obj=None):
         return False

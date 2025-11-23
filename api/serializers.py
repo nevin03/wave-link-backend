@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TermsAndConditions, PrivacyPolicy
+from .models import TermsAndConditions, PrivacyPolicy, ContactDetails
 
 class TermsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,3 +10,8 @@ class PrivacySerializer(serializers.ModelSerializer):
     class Meta:
         model = PrivacyPolicy
         fields = ['content', 'updated_at']
+
+class ContactDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactDetails
+        fields = ['name', 'address', 'email', 'phone', 'updated_at']
