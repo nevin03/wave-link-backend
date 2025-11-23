@@ -158,6 +158,7 @@ STORAGES = {
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://wavelinkworldwide.vercel.app',
 ]
 # Alternatively, allow all origins (not recommended for production)
 # CORS_ALLOW_ALL_ORIGINS = True
