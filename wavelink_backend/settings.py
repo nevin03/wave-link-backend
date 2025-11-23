@@ -190,3 +190,44 @@ SPECTACULAR_SETTINGS = {
     'SECURITY': [],
 }
 
+
+# Jazzmin Settings
+JAZZMIN_SETTINGS = {
+    "site_title": "WaveLink Admin",
+    "site_header": "WaveLink",
+    "site_brand": "WaveLink",
+    "site_logo": "img/logo.png",
+    "login_logo": "img/logo.png",
+    "welcome_sign": "Welcome to WaveLink",
+    "copyright": "WaveLink Ltd",
+    "search_model": ["auth.User"],
+    "user_avatar": None,
+    "site_logo_classes": "img-fluid", 
+    "custom_css": "css/custom_admin.css",
+    "topmenu_links": [
+        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+    ],
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+    },
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flatly",
+    "dark_mode_theme": None,
+    "navbar": "navbar-white navbar-light",
+    "sidebar": "sidebar-light-primary",
+    "accent": "accent-primary",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}

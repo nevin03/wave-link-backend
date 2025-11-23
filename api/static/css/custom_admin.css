@@ -1,0 +1,7 @@
+.brand-link .brand-image {
+    max-height: 40px !important;  /* Make logo smaller */
+    width: auto !important;       /* Maintain aspect ratio */
+    margin-top: -3px !important;
+    opacity: 1 !important;        /* Ensure it's fully visible */
+    float: left !important;
+}
