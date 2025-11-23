@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TermsAndConditions, PrivacyPolicy, ContactDetails
+from .models import TermsAndConditions, PrivacyPolicy, ContactDetails, Counter
 
 class TermsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +15,9 @@ class ContactDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactDetails
         fields = ['name', 'address', 'email', 'phone', 'updated_at']
+
+class CounterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Counter
+        fields = ['id', 'name', 'description', 'map', 'product_image', 'created_at', 'updated_at']
+

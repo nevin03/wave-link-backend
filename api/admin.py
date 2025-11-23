@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TermsAndConditions, PrivacyPolicy, ContactDetails
+from .models import TermsAndConditions, PrivacyPolicy, ContactDetails, Counter
 
 @admin.register(TermsAndConditions)
 class TermsAdmin(admin.ModelAdmin):
@@ -33,3 +33,11 @@ class ContactDetailsAdmin(admin.ModelAdmin):
     
     def has_delete_permission(self, request, obj=None):
         return False
+
+@admin.register(Counter)
+class CounterAdmin(admin.ModelAdmin):
+    list_display = ['name', 'description', 'map', 'created_at']
+    list_filter = ['created_at']
+    search_fields = ['name', 'description']
+    ordering = ['-created_at']
+

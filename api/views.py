@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import TermsAndConditions, PrivacyPolicy, ContactDetails
-from .serializers import TermsSerializer, PrivacySerializer, ContactDetailsSerializer
+from rest_framework import generics
+from .models import TermsAndConditions, PrivacyPolicy, ContactDetails, Counter
+from .serializers import TermsSerializer, PrivacySerializer, ContactDetailsSerializer, CounterSerializer
 
 class TermsView(APIView):
     def get(self, request):
@@ -23,3 +24,8 @@ class ContactDetailsView(APIView):
         if obj:
             return Response(ContactDetailsSerializer(obj).data)
         return Response({"name": "", "address": "", "email": "", "phone": ""})
+
+class CounterListView(generics.ListAPIView):
+    queryset = Counter.objects.all()
+    serializer_class = CounterSerializer
+
