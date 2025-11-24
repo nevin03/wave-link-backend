@@ -158,7 +158,7 @@ STORAGES = {
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://www.wavelinkworldwide.com/',
+    'https://www.wavelinkworldwide.com',
 ]
 # Alternatively, allow all origins (not recommended for production)
 # CORS_ALLOW_ALL_ORIGINS = True
